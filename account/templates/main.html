@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Main Home
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <a href="{% url 'account:home' %}" class="btn btn-lg btn-outline-primary">Accounts</a>
+        <a href="admin/" class="btn btn-lg btn-outline-primary">admin</a>
+        <a class="btn btn-outline-dark" href="{% url 'main_page' %}">Main Page</a>
+    </div>
+{% endblock %}

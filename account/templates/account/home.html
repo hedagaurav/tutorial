@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Account - Home</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        <h1>Accounts Home Page</h1>
+        <a href="{% url 'account:login' %}" class="btn btn-outline-warning btn-lg">Get Started!</a>
+        <h1>{{ myName }}</h1>
+    </div>
+{% endblock %}
