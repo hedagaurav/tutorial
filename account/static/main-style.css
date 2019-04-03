@@ -1,11 +1,20 @@
-body{
+*{
+    margin: 0;
+}
+body {
     background-color: palegoldenrod;
 }
 
-nav{
+nav {
     background-color: green;
 }
 
-span{
+span {
     color: red;
+}
+
+@media screen and (min-width: 500px) {
+    div{
+
+    }
 }

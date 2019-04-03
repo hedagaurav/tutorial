@@ -1,15 +1,17 @@
 <nav class="navbar navbar-expand-md navbar-dark">
     <div>
         <a class="navbar-brand btn btn-outline-danger" href="{% url 'main_page' %}">Main Page</a>
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#nav-menu">
-{#            <span class="navbar-toggler-icon"></span>#}
-            {% if collapse %}
+    </div>
+
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#nav-menu">
+        <span class="navbar-toggler-icon"></span>
+        {% comment %}{% if collapse %}
                 <span>&or;</span>
             {% else %}
                 <span>&and;</span>
-            {% endif %}
-        </button>
-    </div>
+            {% endif %}{% endcomment %}
+    </button>
 
     {#collapse navbar div and links#}
     {#    <div class="collapse navbar-collapse" id="navbar-menu">#}
@@ -19,6 +21,11 @@
             <li class="nav-item"><a class="nav-link" href="#">item1</a></li>
             <li class="nav-item"><a class="nav-link" href="#">item1</a></li>
             <li class="nav-item"><a class="nav-link" href="#">item1</a></li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Register</a></li>
         </ul>
     </div>
 </nav>
