@@ -7,39 +7,47 @@
 
 {% block content %}
     <div class="container">
-        <div class="text-center">
-            <p>List of apps</p>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="admin/" class="">admin</a>
+        <div class="border border-dark apps-group">
+            <div class="text-center">
+                <h3>List of apps</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <a href="admin/" class="apps">
+                            <div class="card-body text-center">
+                                Admin
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="{% url 'account:home' %}" class="">Accounts</a>
+                <div class="col-md-4">
+                    <div class="card">
+                        <a href="{% url 'account:home' %}" class="apps">
+                            <div class="card-body text-center">
+                                Account
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="{% url 'account:home' %}" class="">Accounts</a>
+                <div class="col-md-4">
+                    <div class="card">
+                        <a href="{% url 'account:home' %}" class="apps">
+                            <div class="card-body text-center">
+                                ToDo
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
         {#        main page article #}
-        <article class="article1">
+        <article class="article1 border border-dark">
             <header>
-                <h1 class="text-center">This is Main Page.</h1>
+                <h3 class="text-center">This is Main Page.</h3>
             </header>
             <div class="row">
                 <section class="col border border-danger">
@@ -62,15 +70,21 @@
                         <p class="text-center">To Do List App./ Add Comments App</p>
                     </div>
                     <div class="text-center">
-
-                            <form action="">
-                                <input type="text">
-                                <button class="btn-md btn-sm btn-outline-info">Add</button>
-                            </form>
+                        todo app
 
                     </div>
                 </section>
             </div>
         </article>
-    </div>
+
+        <article class="border border-dark article-todo">
+            <div>
+                <h3 class="text-center">Stand Alone ToDo App</h3>
+            </div>
+            <div>
+                {% include 'todo/todo_home.html' %}
+            </div>
+        </article>
+
+    </div> {# content div closed#}
 {% endblock %}

@@ -7,4 +7,4 @@ def home(request):
     name = 'Gaurav Heda'
     args = {'myName': name}
     # here "account" is the name of the folder in templates folder.
-    return render(request, 'account/home.html', args)
+    return render(request, 'account/register.html', args)
