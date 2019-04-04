@@ -34,7 +34,7 @@
 
                 <div class="col-md-4">
                     <div class="card">
-                        <a href="{% url 'account:home' %}" class="apps">
+                        <a href="{% url 'todo_home' %}" class="apps">
                             <div class="card-body text-center">
                                 ToDo
                             </div>
@@ -65,24 +65,30 @@
                 </section>
 
                 <!--To do app section-->
-                <section class="col  border border-primary">
+                <section class="col border border-primary">
                     <div>
                         <p class="text-center">To Do List App./ Add Comments App</p>
                     </div>
-                    <div class="text-center">
-                        todo app
+                    <hr>
+                    <div class="">
+                        place todo app include file here.
+                        <div>
 
+                        </div>
                     </div>
                 </section>
+
+
             </div>
         </article>
 
+        {#        Single Standalone App integration#}
         <article class="border border-dark article-todo">
             <div>
                 <h3 class="text-center">Stand Alone ToDo App</h3>
             </div>
             <div>
-                {% include 'todo/todo_home.html' %}
+                <p>It will contain a template which will have its view in same app views.</p>
             </div>
         </article>
 

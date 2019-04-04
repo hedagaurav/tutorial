@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from tutorial.views import main_page
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_page, name='main_page'),
     path('account/', include('account.urls')),
-    ''' path('/', include('Todo.urls'))'''
+    path('todo/', include('Todo.urls')),
+
 ]
