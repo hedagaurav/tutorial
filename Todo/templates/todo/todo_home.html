@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'todo_home.css' %}" type="text/css">
+{% endblock %}
 {% block content %}
     <article class="border border-success article-todo col-lg-6">
         <div>
@@ -16,7 +20,8 @@
                         {% csrf_token %}
                         <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control" name="" id="" type="text" placeholder="Enter Your Task.">
+                                <input class="form-control" name="task" id="task" type="text"
+                                       placeholder="Enter Your Task.">
                                 <button type="submit"><span><i class="fas fa-plus"></i></span> ADD</button>
                             </div>
                         </div>
@@ -33,13 +38,22 @@
                             </div>
                         </div>
                     </div>
+
+                    {# todo_list completed and incompleted #}
                     <div class="card-text">
                         <ul class="list-group">
                             <li class="list-group-item">item1</li>
                             {% for item in todo_list %}
-                                <li class="list-group-item">
-                                    {{ item.text }}
-                                </li>
+                                {% if item.complete %}
+                                    <li class="list-group-item todo-completed">
+                                        {{ item.text }}
+                                    </li>
+                                {% else %}
+                                    <li class="list-group-item">
+                                        {{ item.text }}
+                                    </li>
+                                {% endif %}
+
                             {% endfor %}
                         </ul>
                     </div>

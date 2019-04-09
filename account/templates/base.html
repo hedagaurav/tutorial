@@ -8,11 +8,14 @@
           integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'bs4/bootstrap.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'main.css' %}" type="text/css">
-    {% block head %}
-        <title>{% block title %}
 
-        {% endblock %}</title>
+    {% block head %}
+
     {% endblock %}
+    <title>{% block title %}
+
+    {% endblock %}</title>
+
     <script src=" {% static '/bs4/jquery.js' %}"></script>
     <script src=" {% static '/bs4/bootstrap.js' %}"></script>
 
