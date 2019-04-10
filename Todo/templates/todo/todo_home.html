@@ -16,12 +16,12 @@
                     </p>
                 </div>
                 <div>
-                    <form action="" method="post" role="form">
+                    <form action="{% url 'add_todo' %}" method="post" role="form">
                         {% csrf_token %}
                         <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control" name="task" id="task" type="text"
-                                       placeholder="Enter Your Task.">
+
+                                {{ form.text }}
                                 <button type="submit"><span><i class="fas fa-plus"></i></span> ADD</button>
                             </div>
                         </div>
@@ -42,16 +42,18 @@
                     {# todo_list completed and incompleted #}
                     <div class="card-text">
                         <ul class="list-group">
-                            <li class="list-group-item">item1</li>
+
                             {% for item in todo_list %}
                                 {% if item.complete %}
                                     <li class="list-group-item todo-completed">
                                         {{ item.text }}
                                     </li>
                                 {% else %}
-                                    <li class="list-group-item">
-                                        {{ item.text }}
-                                    </li>
+                                    <a href="{% url 'complete' item.id %}">
+                                        <li class="list-group-item">
+                                            {{ item.text }}
+                                        </li>
+                                    </a>
                                 {% endif %}
 
                             {% endfor %}
