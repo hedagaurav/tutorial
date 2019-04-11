@@ -30,3 +30,22 @@ def complete_todo(request, todo_id):
     todo.complete = True
     todo.save()
     return redirect('todo_home')
+
+
+def delete_completed(request):
+    obj = Todo.objects.filter(complete__exact=True)
+
+    if obj:
+        print("obj = ", obj.queryset.get())
+        print('%s is deleted.' % obj)
+    else:
+        print("obj = ", obj)
+        print('empty')
+    obj.delete()
+    return redirect('todo_home')
+
+
+def delete_all(request):
+    obj = Todo.objects.all()
+    obj.delete()
+    return redirect('todo_home')

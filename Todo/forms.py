@@ -10,5 +10,3 @@ class TodoForm(forms.Form):
         'aria-label': 'Todo',
         'aria-describedby': 'add-btn',
     }))
-
-    # text.widget_attrs({'class': 'form-control'})

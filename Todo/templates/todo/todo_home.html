@@ -3,6 +3,9 @@
 {% block head %}
     <link rel="stylesheet" href="{% static 'todo_home.css' %}" type="text/css">
 {% endblock %}
+{% block title %}
+    ToDo App
+{% endblock %}
 {% block content %}
     <article class="border border-success article-todo col-lg-6">
         <div>
@@ -31,10 +34,14 @@
                     <div>
                         <div class="row">
                             <div class="col">
-                                <button><span><i class="fas fa-trash-alt"></i></span> Delete Completed</button>
+                                <a href="{% url 'delete_complete' %}">
+                                    <button><span><i class="fas fa-trash-alt"></i></span> Delete Completed</button>
+                                </a>
                             </div>
                             <div class="col">
-                                <button><span><i class="far fa-trash-alt"></i></span> Delete All</button>
+                                <a href="{% url 'delete_all' %}">
+                                    <button><span><i class="far fa-trash-alt"></i></span> Delete All</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -65,4 +72,10 @@
     </article>
 
 
+{% endblock %}
+
+{% block script %}
+    $(function(){
+    $('#task').focus();
+    })
 {% endblock %}
