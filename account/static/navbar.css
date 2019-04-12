@@ -1,0 +1,27 @@
+/*navbar.html*/
+nav {
+    background-color: lightgreen;
+    /*height: 80px;*/
+}
+
+.brand {
+    color: darkgreen;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.navbar-nav {
+    border: 1px solid darkred;
+}
+
+.nav-link {
+    color: green;
+    text-transform: capitalize;
+    border-bottom: 3px solid transparent;
+
+}
+
+a.nav-link:hover {
+    border-color: darkgreen !important;
+    border-bottom: 3px solid darkblue;
+}
