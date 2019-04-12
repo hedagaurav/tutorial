@@ -1,10 +1,39 @@
+.delete_btn{
+    color: white;
+    background-color: orange;
+    font-weight: bold;
+    text-transform: uppercase;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.buttons{
+    margin-bottom: 1rem;
+}
+
+.list-group a:hover{
+    color: #000;
+}
+
+.list-group-item{
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.list-group-item a:hover{
+    color: #000;
+}
 .todo-completed {
     text-decoration: line-through !important;
-}
-.list-group-item:hover.todo-completed{
-    text-decoration: line-through;
+    color: #000;
 }
 
-a{
+a.todo-completed:hover{
+    color: #000;
+}
 
+.list-group-item.todo-completed:hover{
+    text-decoration: none;
 }

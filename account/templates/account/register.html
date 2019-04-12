@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block head %}
-    <title>Account - Home</title>
+    <title>Account - Registration</title>
 {% endblock %}
 
 
 {% block content %}
     <div class="container">
-        <h1>Accounts Home Page</h1>
+        <h1>Accounts Registration Page</h1>
         <a href="{% url 'account:login' %}" class="btn btn-outline-warning btn-lg">Get Started!</a>
         <h3>{{ myName }}</h3>
     </div>

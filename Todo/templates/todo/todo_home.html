@@ -2,6 +2,7 @@
 {% load static %}
 {% block head %}
     <link rel="stylesheet" href="{% static 'todo_home.css' %}" type="text/css">
+
 {% endblock %}
 {% block title %}
     ToDo App
@@ -31,16 +32,16 @@
                     </form>
                 </div>
                 <div class="card-body">
-                    <div>
-                        <div class="row">
+                    <div class="buttons">
+                        <div class="row text-center">
                             <div class="col">
                                 <a href="{% url 'delete_complete' %}">
-                                    <button><span><i class="fas fa-trash-alt"></i></span> Delete Completed</button>
+                                    <button class="btn delete_btn"><span><i class="far fa-trash-alt"></i></span> Delete Completed</button>
                                 </a>
                             </div>
                             <div class="col">
                                 <a href="{% url 'delete_all' %}">
-                                    <button><span><i class="far fa-trash-alt"></i></span> Delete All</button>
+                                    <button class="btn delete_btn"><span><i class="far fa-trash-alt"></i></span> Delete All</button>
                                 </a>
                             </div>
                         </div>
@@ -52,8 +53,8 @@
 
                             {% for item in todo_list %}
                                 {% if item.complete %}
-                                    <a href="{% url 'complete' item.id %}">
-                                    <li class="list-group-item todo-completed">
+                                    <a class="todo-completed" href="{% url 'complete' item.id %}">
+                                    <li class="list-group-item">
                                         {{ item.text }}
                                     </li>
                                     </a>
