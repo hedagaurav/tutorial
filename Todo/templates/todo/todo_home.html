@@ -20,7 +20,7 @@
                     </p>
                 </div>
                 <div>
-                    <form action="{% url 'add_todo' %}" method="post" role="form">
+                    <form action="{% url 'todo:add_todo' %}" method="post" role="form">
                         {% csrf_token %}
                         <div class="form-group">
                             <div class="input-group">
@@ -35,12 +35,12 @@
                     <div class="buttons">
                         <div class="row text-center">
                             <div class="col">
-                                <a href="{% url 'delete_complete' %}">
+                                <a href="{% url 'todo:delete_complete' %}">
                                     <button class="btn delete_btn"><span><i class="far fa-trash-alt"></i></span> Delete Completed</button>
                                 </a>
                             </div>
                             <div class="col">
-                                <a href="{% url 'delete_all' %}">
+                                <a href="{% url 'todo:delete_all' %}">
                                     <button class="btn delete_btn"><span><i class="far fa-trash-alt"></i></span> Delete All</button>
                                 </a>
                             </div>
@@ -59,7 +59,7 @@
                                     </li>
                                     </a>
                                 {% else %}
-                                    <a href="{% url 'complete' item.id %}">
+                                    <a href="{% url 'todo:complete' item.id %}">
                                         <li class="list-group-item">
                                             {{ item.text }}
                                         </li>

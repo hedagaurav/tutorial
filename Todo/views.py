@@ -20,9 +20,7 @@ def add_todo(request):
     form = NewTodoForm(request.POST)
     print(request.POST['text'])
     if form.is_valid:
-
         form.save()
-
     return redirect('todo_home')
 
 

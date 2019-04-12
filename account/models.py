@@ -6,11 +6,15 @@ from django.db.models.signals import post_save
 # Create your models here.
 # models are similar to tables in database.
 
+class UserRegistrationModel(models.Model):
+    first_name = models.CharField(max_length=32)
+    last_name = models.CharField(max_length=32)
+    email = models.EmailField()
+    username = models.CharField(max_length=32)
+    password = models.CharField(max_length=32)
 
-
-
-
-
+    def __str__(self):
+        return self.username + ' Registered'
 
 
 # class UserProfile(models.Model):

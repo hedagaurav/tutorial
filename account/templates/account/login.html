@@ -14,9 +14,11 @@
         <h3>Login Here!</h3>
         <form method="post" action="">
             {% csrf_token %}
-            {{ form.as_p }}
+{#            {{ form.as_p }}#}
+            <input type="text" name="username">
+            <input type="text" name="password">
             <button class="btn btn-outline-primary" type="submit">Login</button>
-            <a href="{% url 'account:home' %}" class="btn bg-warning">< Back</a>
+            <a href="{% url 'account:account_home' %}" class="btn bg-warning">< Back</a>
         </form>
     </div>
 
