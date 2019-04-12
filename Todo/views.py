@@ -28,14 +28,19 @@ def add_todo(request):
 
 def complete_todo(request, todo_id):
     todo = Todo.objects.get(id=todo_id)
-    todo.complete = True
-    todo.save()
+    if todo.complete:
+        print("todo complete true = {}". format(todo))
+        todo.complete = False
+        todo.save()
+    else:
+        print(f'todo complete false = {todo}')
+        todo.complete = True
+        todo.save()
     return redirect('todo_home')
 
 
 def delete_completed(request):
     obj = Todo.objects.filter(complete__exact=True)
-
     if obj:
         print("obj = ", obj)
         print('%s is deleted.' % obj)

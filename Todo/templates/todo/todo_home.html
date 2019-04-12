@@ -52,9 +52,11 @@
 
                             {% for item in todo_list %}
                                 {% if item.complete %}
+                                    <a href="{% url 'complete' item.id %}">
                                     <li class="list-group-item todo-completed">
                                         {{ item.text }}
                                     </li>
+                                    </a>
                                 {% else %}
                                     <a href="{% url 'complete' item.id %}">
                                         <li class="list-group-item">
