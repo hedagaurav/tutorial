@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
 # from django.contrib.auth import reverse
-from .forms import UserProfile1
+from .forms import UserProfile1, UserRegistrationForm
 
 
 # Create your views here.
@@ -16,7 +16,14 @@ def user_home(request):
 
 
 def user_register(request):
-    context = {}
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            pass
+
+    else:
+        form = UserRegistrationForm()
+    context = {'form': form}
     return render(request, 'account/register.html', context)
 
 

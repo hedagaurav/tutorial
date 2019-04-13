@@ -9,6 +9,15 @@ class UserProfile(forms.ModelForm):
 '''
 
 
+class UserRegistrationForm(forms.ModelForm):
+    class Meta:
+        model = UserRegistrationModel
+        fields = ['first_name', 'last_name', 'email', 'username', 'password']
+        widgets = {
+            'first_name':
+        }
+
+
 class UserProfile1(forms.Form):
     username = forms.CharField(label='Username', max_length=32, widget=(forms.TextInput(attrs={
         'placeholder': 'Enter username',
