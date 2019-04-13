@@ -20,7 +20,7 @@
             <li class="nav-item"><a class="nav-link" href="#">item1</a></li>
             <li class="nav-item"><a class="nav-link" href="#">item1</a></li>
             <li class="nav-item"><a class="nav-link" href="#">item1</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">item1</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'account:account_home' %}">Account Home</a></li>
         </ul>
         {% if user.is_authenticated %}
             <ul class="navbar-nav ml-auto">
@@ -35,8 +35,8 @@
             </ul>
         {% else %}
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="{% url 'account:login' %}" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="{% url 'account:user_register' %}" class="nav-link">Register</a></li>
             </ul>
         {% endif %}
 

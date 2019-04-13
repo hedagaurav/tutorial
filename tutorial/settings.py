@@ -117,4 +117,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/account/'
+# while adding login_required decorators check the path properly for '/' at starting and ending.
+LOGIN_URL = '/account/login/'
+
+# LOGIN_REDIRECT_URL = '/account/'

@@ -12,13 +12,18 @@
 
     <div class="container">
         <h3>Login Here!</h3>
-        <form method="post" action="">
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+
+        {% endif %}
+        <form method="post">
             {% csrf_token %}
-{#            {{ form.as_p }}#}
-            <input type="text" name="username">
-            <input type="text" name="password">
+            {{ form.username }}
+            {{ form.password }}
             <button class="btn btn-outline-primary" type="submit">Login</button>
-            <a href="{% url 'account:account_home' %}" class="btn bg-warning">< Back</a>
+            <a href="{% url 'main_page' %}" class="btn bg-warning">< Back</a>
         </form>
     </div>
 

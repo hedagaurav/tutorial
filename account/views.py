@@ -1,34 +1,46 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
-from .forms import UserProfile
+from django.contrib.auth.decorators import login_required
+# from django.contrib.auth import reverse
+from .forms import UserProfile1
 
 
 # Create your views here.
-def home(request):
+@login_required
+def user_home(request):
     name = 'Gaurav Heda'
     args = {'myName': name}
     # here "account" is the name of the folder in templates folder.
-    return render(request, 'account/register.html', args)
+    return render(request, 'account/home.html', args)
+
+
+def user_register(request):
+    context = {}
+    return render(request, 'account/register.html', context)
 
 
 def user_login(request):
+    form = UserProfile1()
     if request.method == 'POST':
-        # form = UserProfile(request.POST)
-        # if form.is_valid():
-            username = request.POST.get('username')
-            password = request.POST.get('password')
+        form = UserProfile1(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
             print(username, password, user)
-            # if user is not None:
-            #     login(request, user)
-            #     print(login(request, user))
-            #     return redirect('account:home')
-            # else:
-            #     print("username or password is incorrect.")
+            if user is not None:
+                login(request, user)
+                print(login(request, user))
+                return redirect(reverse('account:account_home'))
+            else:
+                message = "username or password is incorrect."
+                messages.error(request, message)
+                form = UserProfile1()
+    context = {'form': form}
+    return render(request, 'account/login.html', context)
 
-    return render(request, 'account/login.html', {})
 
-
-def user_logout(requset):
-    logout(requset)
+def user_logout(request):
+    logout(request)
     return redirect('account:login')
