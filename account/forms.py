@@ -13,9 +13,7 @@ class UserRegistrationForm(forms.ModelForm):
     class Meta:
         model = UserRegistrationModel
         fields = ['first_name', 'last_name', 'email', 'username', 'password']
-        widgets = {
-            'first_name':
-        }
+
 
 
 class UserProfile1(forms.Form):
